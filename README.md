@@ -2,21 +2,25 @@
 
 This example uses ArgoCD ApplicationSet in a hub & spoke architecture. A central cluster that "pushes" changes out to spoke clusters.   This is a bit more advanced than the typical ArgoCD tutorial, I recommend working through some of the more basic examples before tackling this more advanced scenario
 
-The 4 clusters are Digital Ocean Kubernetes Service (DOKS) but any Kubernetes cluster should work well.  ArgoCD ApplicationSet allows you to sync your app to all three spoke clusters.
+The 4 clusters are Azure Kubernetes Services (ASK) but any Kubernetes cluster should work well.  ArgoCD ApplicationSet allows you to sync your app to all three spoke clusters.
 
 Video of ArgoCD ApplicationSet in action
 
 https://youtu.be/RvE85FknYMc
 
-## DOKS clusters
+## ASK clusters
 
-Using the doctl CLI
-https://docs.digitalocean.com/reference/doctl/how-to/install/
+Using the Azure CLI
+[Quickstart: Deploy an Azure Kubernetes Service (ASK) cluster using Azure CLI](https://learn.microsoft.com/en-us/azure/ask/learn/quick-kubernetes-deploy-cli)
 
+[Quickstart: Deploy an Azure Kubernetes Service (ASK) cluster using the Bicep extensibility Kubernetes provider (preview)](https://learn.microsoft.com/en-us/azure/ask/learn/quick-kubernetes-deploy-bicep-extensibility-kubernetes-provider?tabs=azure-cli)
 https://docs.digitalocean.com/products/kubernetes/how-to/connect-to-cluster/
 
+[Quickstart: Deploy an Azure Kubernetes Service (ASK) cluster using Terraform](https://learn.microsoft.com/en-us/azure/ask/learn/quick-kubernetes-deploy-terraform?tabs=bash)
+
+
 ```
-brew install doctl
+brew install azure-cli
 ```
 
 ```
@@ -34,7 +38,7 @@ argocd: v2.9.0+9cf0c69.dirty
 ```
 
 ```
-doctl auth init
+az login
 ```
 
 This will require a token
